@@ -1,8 +1,10 @@
 from django.urls import path
-from .views import customerFormSubmission
+from .views import CustomerFormSubmission, CustomerInfoListView, customerFormSubmissionDoneView
 
 app_name = "datacollector"
 
 urlpatterns = [
-    path("", customerFormSubmission.as_view(), name="application"),
+    path("form/", CustomerFormSubmission.as_view(), name="customerformsubmission"),
+    path("form/done/", customerFormSubmissionDoneView, name="customerformsubmission_done"),
+    path("result/", CustomerInfoListView.as_view(), name="customerinfo_list"),
 ]
