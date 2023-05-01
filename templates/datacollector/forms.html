@@ -25,10 +25,7 @@
     {{ wizard.form|crispy }}
 {% endif %}
 </table>
-{% if wizard.steps.prev %}
-<button class = "btn btn-lg btn-warning"name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">{% trans "first step" %}</button>
-<button class= "btn  btn-lg btn-primary" name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">{% trans "prev step" %}</button>
-{% endif %}
+
 <input class="btn btn-lg btn-success" type="submit" value="{% trans "submit" %}"/>
 </div>
 </form>

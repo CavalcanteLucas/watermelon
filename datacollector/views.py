@@ -1,12 +1,26 @@
 from django.shortcuts import render
-from formtools.wizard.views import CookieWizardView, SessionWizardView
-from .forms import CustomerStoreNameForm, CustomerInfoForm, CustomerTypeForm
+from formtools.wizard.views import SessionWizardView
+from .forms import (
+    CustomerStoreNameForm,
+    CustomerBalanceLeftForm,
+    CustomerSellPriceForm,
+    CustomerTargetNetworkForm,
+    CustomerTargetAddressForm,
+    CustomerClientAddressForm,
+)
 
 
-class customerFormSubmission(CookieWizardView):
+class customerFormSubmission(SessionWizardView):
     template_name = "datacollector/forms.html"
-    form_list = [CustomerStoreNameForm, CustomerTypeForm, CustomerInfoForm]
+    form_list = [
+        CustomerStoreNameForm,
+        CustomerBalanceLeftForm,
+        CustomerSellPriceForm,
+        CustomerTargetNetworkForm,
+        CustomerTargetAddressForm,
+        CustomerClientAddressForm,
+    ]
 
     def done(self, form_list, **kwargs):
         form_data = [form.cleaned_data for form in form_list]
-        return render(self.request, 'datacollector/home.html', {'form_data': form_data})
+        return render(self.request, "datacollector/done.html", {"form_data": form_data})
