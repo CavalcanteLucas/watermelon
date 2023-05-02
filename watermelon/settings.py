@@ -11,8 +11,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
 import os
 
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +29,7 @@ SECRET_KEY = "django-insecure-h22ez#(@z$fg6zeazn)3w9cieeas7&qqy2892v9q&e4@km3+uo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app"]
+ALLOWED_HOSTS = ["localhost", ".vercel.app"]
 
 
 # Application definition
@@ -85,12 +87,12 @@ WSGI_APPLICATION = "watermelon.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": os.getenv("POSTGRES_URL"),
-        "URL": os.getenv("POSTGRES_URL"),
         "USER": os.getenv("PGUSER"),
-        "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
-        "HOST": os.getenv("PGHOST"),
         "PORT": os.getenv("PGPORT"),
+        "PASSWORD": os.getenv("PGPASSWORD"),
+        "HOST": os.getenv("PGHOST"),
+        "NAME": os.getenv("PGDATABASE"),
+        "URL": os.getenv("DATABASE_URL"),
     }
 }
 

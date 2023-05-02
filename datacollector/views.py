@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import generic
 from formtools.wizard.views import SessionWizardView
 from .forms import (
@@ -44,3 +44,6 @@ class CustomerInfoListView(generic.ListView):
 
 def customerFormSubmissionDoneView(request):
     return render(request, "datacollector/done.html")
+
+def indexView():
+    return redirect("datacollector:customerformsubmission")
