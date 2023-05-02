@@ -2,6 +2,8 @@
 
 This app is a simple form that asks the user a few questions and then shows the results.
 
+Access it at: https://watermelon--beta.vercel.app/.
+
 ## Running the app
 
 1. Clone the repository to your local machine.
@@ -18,10 +20,7 @@ docker-compser -f docker-compose.yml up --build
 http://localhost:8000
 ```
 
-[^1]: Make sure the port 5432 is **not** in use! If it is, consider stoping your local postgresql server. In case you're in linux, you can do it by running:
-```
-sudo service postgresql stop
-```
+[^1]: Make sure the port 5432 is **not** in use! If it is, consider stoping your local postgresql server. In case you're in linux, you can do it by running: `sudo service postgresql stop`.
 
 ## Implementation Specs
 
@@ -58,5 +57,6 @@ These bonus specs have not been implemented within the given time limit:
 - Question validation;
 - Optional questions.
 
-Author
-Watermelon is developed by **Lucas C Cavalcante**. If you have any questions or feedback about the app, please feel free to contact me at lucascpcavalcante@gmail.com.
+### Author
+
+**Watermelon** is developed by **Lucas C Cavalcante**. If you have any questions or feedback about the app, please feel free to contact me at lucascpcavalcante@gmail.com.
