@@ -45,5 +45,5 @@ class CustomerInfoListView(generic.ListView):
 def customerFormSubmissionDoneView(request):
     return render(request, "datacollector/done.html")
 
-def indexView():
+def indexView(request):
     return redirect("datacollector:customerformsubmission")
