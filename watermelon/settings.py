@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -83,15 +84,15 @@ WSGI_APPLICATION = "watermelon.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "watermelon_db",
-        "USER": "watermelon_user",
-        "PASSWORD": "dale",
-        "HOST": "localhost",
-        "PORT": "5432",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.getenv("POSTGRES_URL"),
+        "URL": os.getenv("POSTGRES_URL"),
+        "USER": os.getenv("PGUSER"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
+        "HOST": os.getenv("PGHOST"),
+        "PORT": os.getenv("PGPORT"),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -131,7 +132,7 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, "static"),
 ]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
