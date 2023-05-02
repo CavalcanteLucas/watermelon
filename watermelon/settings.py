@@ -84,7 +84,7 @@ WSGI_APPLICATION = "watermelon.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": os.getenv("POSTGRES_URL"),
         "URL": os.getenv("POSTGRES_URL"),
         "USER": os.getenv("PGUSER"),
