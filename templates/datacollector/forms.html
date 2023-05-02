@@ -1,25 +1,59 @@
-
-{% extends "datacollector/home.html" %}
-{% load crispy_forms_tags %}
-
-
+{% extends "datacollector/home.html" %} {% load crispy_forms_tags %}
 {% block content %}
-<div class="container-sm d-flex justify-content-start">
-    <form action="" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <table>
-                {{ wizard.management_form }}
-                {{ wizard.form|crispy }}
-            </table>
-            {% if wizard.steps.prev %}
-                <button class= "btn btn-secondary " name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">
-                    Back
-                </button>
-            {% endif %}
-            <input class="btn btn-primary" type="submit" value="Next"/>
-            <p style="margin-top:2rem; font-size: small">
-                Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}
+<div
+  class="container"
+  style="display: flex; align-items: center; flex-direction: column"
+>
+  <div
+    class="row"
+    style="
+      background-color: white;
+      width: 300px;
+      border-radius: 5px;
+      margin-top: 5rem;
+      padding-top: 5px;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    "
+  >
+    <div class="col">
+      <div class="d-flex justify-content-center;">
+        <form
+          action=""
+          method="post"
+          enctype="multipart/form-data"
+          style="width: 100%;"
+        >
+            <div style="height: 6rem;">
+                {% csrf_token %} {{ wizard.management_form }} {{ wizard.form|crispy }}
+            </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+              margin-bottom: 15px;
+            "
+          >
+            <p style="font-size: small;transform: translateY(100%);">
+              Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}
             </p>
+            {% if wizard.steps.prev %}
+            <div style="display: flex; gap: 5px">
+              <button
+                class="btn btn-secondary"
+                name="wizard_goto_step"
+                type="submit"
+                value="{{ wizard.steps.prev }}"
+              >
+                Back
+              </button>
+              {% endif %}
+              <button class="btn btn-primary" type="submit">Next</button>
+            </div>
+          </div>
         </form>
+      </div>
     </div>
+  </div>
+</div>
 {% endblock %}
