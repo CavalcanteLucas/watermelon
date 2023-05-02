@@ -6,6 +6,10 @@ body {
   margin-top: 0.5rem;
 }
 
+#top-navbar a {
+  font-weight: bold;
+}
+
 #page-title {
   margin: 1rem 0 2rem 0;
 }
