@@ -25,6 +25,7 @@ http://localhost:8000
 ## Implementation Specs
 
 The following specs have been implemented:
+- The Seller Onboarding Form is the first thing a user sees on landing on the site.
 - The Seller Onboarding Form has 6 questions.
     - Each question is displayed alone, sequentially.
 - The completed forms are displayd in a page for the results.
