@@ -1,5 +1,7 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,12 +18,12 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body style="background-color: aliceblue">
+  <body>
     {% block header %}
     <div class="container">
       <div class="row">
         <div class="col">
-          <div  class="d-flex justify-content-center" style="margin-top: 0.5rem;">
+          <div id="top-navbar" class="d-flex justify-content-center">
             [<a href="{% url 'datacollector:customerformsubmission' %}">Start</a>]
             |
             [<a href="{% url 'datacollector:customerinfo_list' %}">Results</a>]
@@ -29,7 +31,7 @@
         </div>
         <div class="row">
           <div class="col">
-            <h2 class="d-flex justify-content-center" style="margin: 1rem 0 2rem 0;">
+            <h2 id="page-title" class="d-flex justify-content-center">
               Watermelon Markets - Seller Survey
             </h2>
           </div>

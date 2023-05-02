@@ -1,19 +1,9 @@
 {% extends "datacollector/home.html" %} {% load crispy_forms_tags %}
 {% block content %}
-<div
-  class="container"
-  style="display: flex; align-items: center; flex-direction: column"
->
+<div class="container d-flex justify-content-center">
   <div
     class="row"
-    style="
-      background-color: white;
-      width: 300px;
-      border-radius: 5px;
-      margin-top: 5rem;
-      padding-top: 5px;
-      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    "
+    id="main-form-container-row"
   >
     <div class="col">
       <div class="d-flex justify-content-center;">
@@ -21,24 +11,17 @@
           action=""
           method="post"
           enctype="multipart/form-data"
-          style="width: 100%;"
+          id="main-form"
         >
-            <div style="height: 6rem;">
+            <div id="crispy-form-box">
                 {% csrf_token %} {{ wizard.management_form }} {{ wizard.form|crispy }}
             </div>
-          <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              width: 100%;
-              margin-bottom: 15px;
-            "
-          >
-            <p style="font-size: small;transform: translateY(100%);">
+          <div id="crispy-form-bottom-box">
+            <p>
               Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}
             </p>
             {% if wizard.steps.prev %}
-            <div style="display: flex; gap: 5px">
+            <div>
               <button
                 class="btn btn-secondary"
                 name="wizard_goto_step"

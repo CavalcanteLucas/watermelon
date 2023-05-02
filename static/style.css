@@ -1,0 +1,58 @@
+body {
+  background-color: aliceblue !important;
+}
+
+#top-navbar {
+  margin-top: 0.5rem;
+}
+
+#page-title {
+  margin: 1rem 0 2rem 0;
+}
+
+#main-form-container-row {
+  background-color: white;
+  width: 300px;
+  border-radius: 5px;
+  margin-top: 5rem;
+  padding-top: 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+#main-form {
+  width: 100%;
+}
+
+#crispy-form-box {
+  height: 6rem;
+}
+
+#crispy-form-bottom-box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#crispy-form-bottom-box p {
+  font-size: small;
+  transform: translateY(100%);
+}
+
+#done-container-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15rem;
+}
+
+#results-container-box {
+  background-color: white;
+  padding: 5px 5px 5px 5px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+#results-container-box table {
+  border-collapse: separate;
+  border-spacing: 1rem 0;
+}
