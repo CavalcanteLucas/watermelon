@@ -38,7 +38,6 @@ The following specs have been implemented:
 This spec has **not** been implemented within the given time limit:
 - If the user hits refresh on the browser, a new Entry is created in the page of results.
 
-
 ## Bonus Specs
 
 The following bonus specs have been implemented:
